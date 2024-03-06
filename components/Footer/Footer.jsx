@@ -84,6 +84,12 @@ function Footer() {
             </div>
           </div>
         </div>
+
+        <div className={styles.footer}>
+          <span className={styles.info__item_value}>
+            Copyright © 2024 Dever.code, Inc.
+          </span>
+        </div>
       </div>
     </div>
   );

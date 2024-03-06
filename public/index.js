@@ -9,4 +9,15 @@ const images = {
   },
 };
 
+export const icons = {
+  menuMobile: {
+    src: "/burger-bar.png",
+    alt: "menu-mobile-icon",
+  },
+  closeMenuMobile: {
+    src: "/cross-mark.png",
+    alt: "close-menu-mobile-icon",
+  },
+};
+
 export default images;
