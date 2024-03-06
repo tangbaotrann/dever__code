@@ -10,9 +10,11 @@
   --primary-bg: radial-gradient(
     circle,
     rgba(0, 21, 59, 1) 0%,
-    rgba(13, 19, 51, 1) 100%,
+    rgb(245, 246, 252) 100%,
     rgba(255, 0, 0, 1) 100%
   );
+
+  /* rgba(13, 19, 51, 1) 100%, */
 
   /* define font-family */
   --primary-font: "Nunito", sans-serif;

@@ -18,6 +18,14 @@ export const icons = {
     src: "/cross-mark.png",
     alt: "close-menu-mobile-icon",
   },
+  github: {
+    src: "/github.png",
+    alt: "github-icon",
+  },
+  logout: {
+    src: "/logout.png",
+    alt: "logout-icon",
+  },
 };
 
 export default images;

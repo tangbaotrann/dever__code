@@ -1,3 +1,11 @@
+export const constants = {
+  HOME: "Trang chủ",
+  BLOG: "Blog",
+  SUMMARY: "Tóm tắt",
+  LOGIN: "Đăng nhập",
+  LOGOUT: "Đăng xuất",
+};
+
 export const router = {
   HOME_URL: "/",
   ABOUT_URL: "/about",
@@ -9,16 +17,16 @@ export const router = {
 // Header links
 const menus = [
   {
-    title: "Blog",
-    url: router.BLOG_URL,
+    title: constants.HOME,
+    url: router.HOME_URL,
   },
   {
-    title: "Tóm tắt",
+    title: constants.SUMMARY,
     url: router.ABOUT_URL,
   },
   {
-    title: "Đăng nhập",
-    url: router.LOGIN_URL,
+    title: constants.BLOG,
+    url: router.BLOG_URL,
   },
 ];
 

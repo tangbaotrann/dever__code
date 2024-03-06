@@ -1,0 +1,16 @@
+.menu__item {
+  padding: 10px;
+  border-radius: 26px;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.active {
+  background: var(--primary-bg);
+  box-shadow: 0 0 2px 3px var(--header-border-bottom);
+}
+
+.form {
+  padding: 0;
+  margin: 0;
+}
