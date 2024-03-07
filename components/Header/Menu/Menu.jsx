@@ -46,7 +46,7 @@ function Menu({ session }) {
                   />
                 </div>
                 <span className={styles.username}>
-                  {session?.user?.username}
+                  {session?.user?.username || session?.user?.name}
                 </span>
               </div>
             </>
@@ -106,7 +106,7 @@ function Menu({ session }) {
                   />
                 </div>
                 <span className={styles.username}>
-                  {session?.user?.username}
+                  {session?.user?.username || session?.user?.name}
                 </span>
               </div>
             </>

@@ -42,10 +42,6 @@ export const {
   signIn,
   signOut,
 } = NextAuth((req) => {
-  if (req) {
-    console.log(req); // do something with the request
-  }
-
   return {
     ...authConfig,
     providers: [
@@ -69,13 +65,14 @@ export const {
     ],
     callbacks: {
       async signIn({ user, account, profile }) {
+        console.log("--> 72 [PROFILE]", profile);
         if (account.provider === "github") {
           try {
             await connectToDB();
 
             const user = await User.findOne({ email: profile.email });
 
-            console.log("[USER] ->", user);
+            console.log("----> 78 [USER] ->", user);
 
             if (!user) {
               const newUser = new User({

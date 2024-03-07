@@ -6,10 +6,12 @@ export const authConfig = {
   callbacks: {
     // FOR MORE DETAIL ABOUT CALLBACK FUNCTIONS CHECK https://next-auth.js.org/configuration/callbacks
     async jwt({ token, user }) {
+      console.log("---> 9 [TOKEN]", token);
+      console.log("---> 10 [USER]", user);
       if (user) {
         token.id = user.id;
         token.username = user.username;
-        token.isAdmin = user._doc.isAdmin;
+        token.isAdmin = user.isAdmin || false;
       }
       return token;
     },

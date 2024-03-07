@@ -6,6 +6,8 @@ import { auth } from "@/app/auth";
 async function Header() {
   const session = await auth();
 
+  console.log("session", session);
+
   return (
     <div className={styles.container}>
       {/* Logo */}
