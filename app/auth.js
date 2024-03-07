@@ -7,32 +7,34 @@ import connectToDB from "../lib/db";
 import { User } from "../lib/models";
 import { authConfig } from "@/app/auth.config";
 
-// Google account
-// const login = async (credentials) => {
-//   try {
-//     await connectToDB();
+// Login with account credentials
+const login = async (credentials) => {
+  try {
+    await connectToDB();
 
-//     const user = await User.findOne({ username: credentials.username });
+    const user = await User.findOne({ username: credentials.username });
 
-//     if (!user) {
-//       throw new Error("Wrong credentials!");
-//     }
+    if (!user) {
+      throw new Error("Wrong credentials!");
+    }
 
-//     const isPasswordCorrect = await bcrypt.compare(
-//       credentials.password,
-//       user.password
-//     );
+    const isPasswordCorrect = await bcrypt.compare(
+      credentials.password,
+      user.password
+    );
 
-//     if (!isPasswordCorrect) {
-//       throw new Error("Wrong credentials!");
-//     }
+    if (!isPasswordCorrect) {
+      throw new Error("Wrong credentials!");
+    }
 
-//     return user;
-//   } catch (err) {
-//     console.log(err);
-//     throw new Error("Failed to login!!");
-//   }
-// };
+    return user;
+  } catch (err) {
+    console.log(err);
+    throw new Error(
+      "Đăng nhập không thành công. Vui lòng thử lại! (Hoặc có thể liên hệ qua mail: tangbaotrann@gmail.com để được hỗ trợ nhé.)"
+    );
+  }
+};
 
 export const {
   handlers: { GET, POST },
@@ -52,18 +54,18 @@ export const {
         clientId: process.env.GITHUB_ID,
         clientSecret: process.env.GITHUB_SECRET,
       }),
-      // Google account
-      // CredentialsProvider({
-      //   async authorize(credentials) {
-      //     try {
-      //       const user = await login(credentials);
+      // Login with account credentials
+      CredentialsProvider({
+        async authorize(credentials) {
+          try {
+            const user = await login(credentials);
 
-      //       return user;
-      //     } catch (err) {
-      //       return null;
-      //     }
-      //   },
-      // }),
+            return user;
+          } catch (err) {
+            return null;
+          }
+        },
+      }),
     ],
     callbacks: {
       async signIn({ user, account, profile }) {

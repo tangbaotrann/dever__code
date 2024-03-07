@@ -6,7 +6,7 @@ export const constants = {
   LOGOUT: "Đăng xuất",
 };
 
-export const router = {
+export const routes = {
   HOME_URL: "/",
   ABOUT_URL: "/about",
   BLOG_URL: "/blog",
@@ -18,15 +18,15 @@ export const router = {
 const menus = [
   {
     title: constants.HOME,
-    url: router.HOME_URL,
+    url: routes.HOME_URL,
   },
   {
     title: constants.SUMMARY,
-    url: router.ABOUT_URL,
+    url: routes.ABOUT_URL,
   },
   {
     title: constants.BLOG,
-    url: router.BLOG_URL,
+    url: routes.BLOG_URL,
   },
 ];
 

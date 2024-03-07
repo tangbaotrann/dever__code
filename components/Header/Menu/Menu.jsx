@@ -5,7 +5,7 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 
 import styles from "./Menu.module.css";
-import menus, { constants, router } from "@/routes";
+import menus, { constants, routes } from "@/routes";
 import MenuItem from "./MenuItem/MenuItem";
 import images, { icons } from "@/public";
 import Logout from "@/components/Logout/Logout";
@@ -45,14 +45,16 @@ function Menu({ session }) {
                     height={38}
                   />
                 </div>
-                <span className={styles.username}>{session?.user?.name}</span>
+                <span className={styles.username}>
+                  {session?.user?.username}
+                </span>
               </div>
             </>
           ) : (
             <MenuItem
               menu={{
                 title: constants.LOGIN,
-                url: router.LOGIN_URL,
+                url: routes.LOGIN_URL,
               }}
               pathName={pathName}
             />
@@ -88,6 +90,35 @@ function Menu({ session }) {
               <MenuItem menu={menu} pathName={pathName} />
             </li>
           ))}
+
+          {/* Check user login */}
+          {session?.user ? (
+            <>
+              <Logout />
+              {/* Avatar + name */}
+              <div className={styles.user}>
+                <div className={styles.avatar__image}>
+                  <Image
+                    src={session?.user?.image || images.avatar.src}
+                    alt={images.avatar.alt}
+                    width={38}
+                    height={38}
+                  />
+                </div>
+                <span className={styles.username}>
+                  {session?.user?.username}
+                </span>
+              </div>
+            </>
+          ) : (
+            <MenuItem
+              menu={{
+                title: constants.LOGIN,
+                url: routes.LOGIN_URL,
+              }}
+              pathName={pathName}
+            />
+          )}
         </ul>
       )}
     </>
