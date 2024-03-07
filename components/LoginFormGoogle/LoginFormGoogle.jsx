@@ -1,28 +1,28 @@
 import Image from "next/image";
 
-// import styles from "./LoginFormGitHub.module.css";
-import Form from "../Form/Form";
-import { loginUserWithGithub } from "@/lib/actions";
+// import styles from "./LoginFormGoogle.module.css";
 import { icons } from "@/public";
+import Form from "../Form/Form";
+import { loginUserWithGoogle } from "@/lib/actions";
 import ActionButton from "../Button/ActionButton/ActionButton";
 
-function LoginFormGitHub() {
+function LoginFormGoogle() {
   return (
     <Form
       title="Đăng nhập nhanh với tài khoản Github của bạn."
-      action={loginUserWithGithub}
+      action={loginUserWithGoogle}
     >
       <ActionButton>
         <Image
-          src={icons.github.src}
-          alt={icons.github.alt}
+          src={icons.google.src}
+          alt={icons.google.alt}
           width={24}
           height={24}
         />
-        Đăng nhập với Github
+        Đăng nhập với Google
       </ActionButton>
     </Form>
   );
 }
 
-export default LoginFormGitHub;
+export default LoginFormGoogle;

@@ -12,6 +12,7 @@ import Form from "../Form/Form";
 import Input from "../Input/Input";
 import { routes } from "@/routes";
 import { registerUser } from "@/lib/actions";
+import ActionButton from "../Button/ActionButton/ActionButton";
 
 function RegisterForm() {
   const [state, formAction] = useFormState(registerUser, undefined);
@@ -67,9 +68,7 @@ function RegisterForm() {
         borderRadius
       />
 
-      <Button primary large borderRadius>
-        Đăng ký
-      </Button>
+      <ActionButton>Đăng ký</ActionButton>
 
       <span className={styles.login}>
         Bạn đã có tài khoản?

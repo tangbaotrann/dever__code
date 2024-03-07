@@ -1,15 +1,15 @@
 import Image from "next/image";
 
-import styles from "./Logout.module.css";
-import Button from "../Button/Button";
+// import styles from "./Logout.module.css";
 import { icons } from "@/public";
 import Form from "../Form/Form";
 import { logoutUser } from "@/lib/actions";
+import ActionButton from "../Button/ActionButton/ActionButton";
 
 function Logout() {
   return (
     <Form title="Đăng xuất tại đây." action={logoutUser}>
-      <Button primary large borderRadius className={styles.button__logout}>
+      <ActionButton>
         <Image
           src={icons.logout.src}
           alt={icons.logout.alt}
@@ -17,7 +17,7 @@ function Logout() {
           height={16}
         />
         Đăng xuất
-      </Button>
+      </ActionButton>
     </Form>
   );
 }

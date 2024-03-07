@@ -4,11 +4,11 @@ import { useFormState } from "react-dom";
 import Link from "next/link";
 
 import styles from "./LoginForm.module.css";
-import Button from "../Button/Button";
 import Form from "../Form/Form";
 import Input from "../Input/Input";
 import { loginUserWithCredentials } from "@/lib/actions";
 import { routes } from "@/routes";
+import ActionButton from "../Button/ActionButton/ActionButton";
 
 function LoginForm() {
   const [state, formAction] = useFormState(loginUserWithCredentials, undefined);
@@ -42,9 +42,7 @@ function LoginForm() {
         borderRadius
       />
 
-      <Button primary large borderRadius>
-        Đăng nhập
-      </Button>
+      <ActionButton>Đăng nhập</ActionButton>
 
       <span className={styles.register}>
         Bạn chưa có tài khoản?

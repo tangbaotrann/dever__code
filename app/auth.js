@@ -1,5 +1,6 @@
 import NextAuth from "next-auth";
 import GitHub from "next-auth/providers/github";
+import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
 
@@ -15,7 +16,10 @@ const login = async (credentials) => {
     const user = await User.findOne({ username: credentials.username });
 
     if (!user) {
-      throw new Error("Wrong credentials!");
+      throw new Error("Wrong credentials !");
+      // return {
+      //   error: "Thông tin đăng nhập không chính xác. Vui lòng thử lại!",
+      // };
     }
 
     const isPasswordCorrect = await bcrypt.compare(
@@ -24,15 +28,18 @@ const login = async (credentials) => {
     );
 
     if (!isPasswordCorrect) {
-      throw new Error("Wrong credentials!");
+      throw new Error("Wrong credentials !");
+      // return { error: "Mật khẩu không đúng. Vui lòng thử lại!" };
     }
 
     return user;
   } catch (err) {
     console.log(err);
-    throw new Error(
-      "Đăng nhập không thành công. Vui lòng thử lại! (Hoặc có thể liên hệ qua mail: tangbaotrann@gmail.com để được hỗ trợ nhé.)"
-    );
+    // return {
+    //   error:
+    //   "Đăng nhập không thành công. Vui lòng thử lại! (Hoặc có thể liên hệ qua mail: tangbaotrann@gmail.com để được mình hỗ trợ nhé.)",
+    // };
+    throw err;
   }
 };
 
@@ -45,12 +52,17 @@ export const {
   return {
     ...authConfig,
     providers: [
-      // Github account
+      // Login with Github account
       GitHub({
         clientId: process.env.GITHUB_ID,
         clientSecret: process.env.GITHUB_SECRET,
       }),
-      // Login with account credentials
+      // Login with Google account
+      GoogleProvider({
+        clientId: process.env.GOOGLE_CLIENT_ID,
+        clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      }),
+      // Login with Credentials account
       CredentialsProvider({
         async authorize(credentials) {
           try {
@@ -65,20 +77,43 @@ export const {
     ],
     callbacks: {
       async signIn({ user, account, profile }) {
-        console.log("--> 72 [PROFILE]", profile);
-        if (account.provider === "github") {
+        const GITHUB = "github";
+        const GOOGLE = "google";
+        console.log("--> 77 [PROFILE]", profile);
+        if (account.provider === GITHUB) {
           try {
             await connectToDB();
 
             const user = await User.findOne({ email: profile.email });
 
-            console.log("----> 78 [USER] ->", user);
+            // console.log("----> 78 [USER GITHUB] ->", user);
 
             if (!user) {
               const newUser = new User({
                 username: profile.login,
                 email: profile.email,
                 image: profile.avatar_url,
+              });
+
+              await newUser.save();
+            }
+          } catch (err) {
+            console.log(err);
+            return false;
+          }
+        } else if (account.provider === GOOGLE) {
+          try {
+            await connectToDB();
+
+            const user = await User.findOne({ email: profile.email });
+
+            // console.log("----> 102 [USER GOOGLE] ->", user);
+
+            if (!user) {
+              const newUser = new User({
+                username: profile.name,
+                email: profile.email,
+                image: profile.picture,
               });
 
               await newUser.save();
