@@ -1,37 +1,33 @@
 const images = {
   avatar: {
-    src: "/noavatar.png",
+    src: "/assets/images/noavatar.png",
     alt: "avatar-image",
-  },
-  logo: {
-    src: "/logo.png",
-    alt: "logo-image",
   },
 };
 
 export const icons = {
   menuMobile: {
-    src: "/burger-bar.png",
+    src: "/assets/images/burger-bar.png",
     alt: "menu-mobile-icon",
   },
   closeMenuMobile: {
-    src: "/cross-mark.png",
+    src: "/assets/images/cross-mark.png",
     alt: "close-menu-mobile-icon",
   },
   loading: {
-    src: "/loading.png",
+    src: "/assets/images/loading.png",
     alt: "loading-icon",
   },
   github: {
-    src: "/github.png",
+    src: "/assets/images/github.png",
     alt: "github-icon",
   },
   google: {
-    src: "/google.png",
+    src: "/assets/images/google.png",
     alt: "google-icon",
   },
   logout: {
-    src: "/logout.png",
+    src: "/assets/images/logout.png",
     alt: "logout-icon",
   },
 };

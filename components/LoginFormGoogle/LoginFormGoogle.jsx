@@ -9,7 +9,7 @@ import ActionButton from "../Button/ActionButton/ActionButton";
 function LoginFormGoogle() {
   return (
     <Form
-      title="Đăng nhập nhanh với tài khoản Github của bạn."
+      title="Đăng nhập nhanh với tài khoản Google của bạn."
       action={loginUserWithGoogle}
     >
       <ActionButton>
