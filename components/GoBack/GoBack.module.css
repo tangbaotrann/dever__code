@@ -1,0 +1,12 @@
+.not___found_link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.not___found_link:hover {
+  opacity: 0.6;
+  transition: all 0.5s;
+}

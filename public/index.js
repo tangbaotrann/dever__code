@@ -30,6 +30,18 @@ export const icons = {
     src: "/assets/images/logout.png",
     alt: "logout-icon",
   },
+  notFound: {
+    src: "/assets/images/error-404.png",
+    alt: "not-found-icon",
+  },
+  arrowGoBack: {
+    src: "/assets/images/arrow.png",
+    alt: "arrow-go-back-icon",
+  },
+  error: {
+    src: "/assets/images/error.png",
+    alt: "error-icon",
+  },
 };
 
 export default images;
