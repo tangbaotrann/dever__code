@@ -22,3 +22,11 @@
     transform: rotate(360deg);
   }
 }
+
+/* Responsive */
+@media screen and (max-width: 480px) {
+  .button__github {
+    font-size: 1.3rem;
+    gap: 6px;
+  }
+}

@@ -18,7 +18,7 @@ function Footer() {
                 Phát triển bởi mình (Tăng Bảo Trấn) vào năm 2024, là blog cá
                 nhân chia sẻ kiến thức về lập trình IT, các lỗi gặp phải cũng
                 như các solutions cho các lỗi đó. Giúp mọi người level up skill
-                của bản thân.
+                của bản thân hơn.
               </span>
             </div>
           </div>

@@ -46,3 +46,14 @@
   color: var(--header-border-bottom);
   transition: all 0.5s;
 }
+
+@media screen and (max-width: 480px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer {
+    margin: 0;
+  }
+}

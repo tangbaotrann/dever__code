@@ -28,7 +28,7 @@ function LoginForm() {
       <Input
         type="text"
         name="username"
-        placeholder="Nhập tên của bạn..."
+        placeholder="Nhập tài khoản của bạn..."
         primary
         large
         borderRadius
