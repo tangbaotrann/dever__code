@@ -7,20 +7,24 @@ import { useFormState } from "react-dom";
 import { useRouter } from "next/navigation";
 
 import styles from "./RegisterForm.module.css";
-import Button from "../Button/Button";
 import Form from "../Form/Form";
 import Input from "../Input/Input";
 import { routes } from "@/routes";
 import { registerUser } from "@/lib/actions";
 import ActionButton from "../Button/ActionButton/ActionButton";
 
-function RegisterForm() {
+function RegisterForm({ session }) {
   const [state, formAction] = useFormState(registerUser, undefined);
 
   const router = useRouter();
 
+  // user already login -> push to home page
   useEffect(() => {
-    state?.success && router.push(routes.LOGIN_URL);
+    session?.user && router.push(routes.HOME_URL);
+  }, [router, session?.user]);
+
+  useEffect(() => {
+    state?.success && router.push(routes.VERIFY_URL);
   }, [router, state?.success]);
 
   return (
@@ -67,6 +71,7 @@ function RegisterForm() {
         large
         borderRadius
       />
+      <Input type="radio" name="isActive" defaultValue={false} hidden={true} />
 
       <ActionButton>Đăng ký</ActionButton>
 

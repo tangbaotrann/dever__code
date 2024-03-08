@@ -10,6 +10,7 @@ function Input({
   placeholder,
   required,
   className,
+  hidden,
   small = false,
   medium = false,
   large = false,
@@ -40,6 +41,7 @@ function Input({
       placeholder={placeholder}
       required={required}
       className={`${className} ${_small} ${_medium} ${_large} ${_outline} ${_border} ${_borderRadius} ${_primary}`}
+      hidden={hidden}
     />
   );
 }

@@ -12,6 +12,7 @@ export const routes = {
   BLOG_URL: "/blog",
   REGISTER_URL: "/register",
   LOGIN_URL: "/login",
+  VERIFY_URL: "/verify",
 };
 
 // Header links

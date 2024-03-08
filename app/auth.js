@@ -2,7 +2,6 @@ import NextAuth from "next-auth";
 import GitHub from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
-// import EmailProvider from "next-auth/providers/email";
 import bcrypt from "bcryptjs";
 
 import connectToDB from "../lib/db";
@@ -75,18 +74,6 @@ export const {
           }
         },
       }),
-      // Verify with email address
-      // EmailProvider({
-      //   server: {
-      //     host: process.env.EMAIL_SERVER_HOST,
-      //     port: process.env.EMAIL_SERVER_PORT,
-      //     auth: {
-      //       user: process.env.EMAIL_SERVER_USER,
-      //       pass: process.env.EMAIL_SERVER_PASSWORD
-      //     }
-      //   },
-      //   from: process.env.EMAIL_FROM
-      // }),
     ],
     callbacks: {
       async signIn({ user, account, profile }) {
