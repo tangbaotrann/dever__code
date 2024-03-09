@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.section__left {
+  flex: 1;
+}
+
+.section__right {
+  flex: 0.5;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    flex: 1;
+  }
+
+  .section__right {
+    width: 100%;
+    margin: 40px 0;
+  }
+}

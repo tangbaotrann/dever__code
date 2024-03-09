@@ -7,7 +7,7 @@ import styles from "./ActionButton.module.css";
 import Button from "../Button";
 import { icons } from "@/public";
 
-function ActionButton({ children }) {
+function ActionButton({ children, className }) {
   const { pending } = useFormStatus();
 
   return (
@@ -15,7 +15,7 @@ function ActionButton({ children }) {
       primary
       large
       borderRadius
-      className={`${styles.button__github} ${
+      className={`${className} ${styles.button__github} ${
         pending && styles.button__disabled
       }`}
       type="submit"

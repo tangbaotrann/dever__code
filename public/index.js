@@ -42,6 +42,60 @@ export const icons = {
     src: "/assets/images/error.png",
     alt: "error-icon",
   },
+  blog: {
+    src: "/assets/images/blog.png",
+    alt: "blog-icon",
+  },
+  messenger: {
+    src: "/assets/images/messenger.png",
+    alt: "messenger-icon",
+  },
 };
+
+export const slidesTop = [
+  {
+    src: "/assets/images/html-5.png",
+    alt: "html-icon",
+  },
+  {
+    src: "/assets/images/css-3.png",
+    alt: "css-icon",
+  },
+  {
+    src: "/assets/images/js.png",
+    alt: "js-icon",
+  },
+  {
+    src: "/assets/images/react.png",
+    alt: "react-icon",
+  },
+  {
+    src: "/assets/images/sass.png",
+    alt: "sass-icon",
+  },
+];
+
+export const slidesBottom = [
+  {
+    src: "/assets/images/nextjs.png",
+    alt: "nextjs-icon",
+  },
+  {
+    src: "/assets/images/nodejs.png",
+    alt: "nodejs-icon",
+  },
+  {
+    src: "/assets/images/github.png",
+    alt: "github-icon",
+  },
+  {
+    src: "/assets/images/docker.png",
+    alt: "docker-icon",
+  },
+  {
+    src: "/assets/images/mongoDB.png",
+    alt: "mongoDB-icon",
+  },
+];
 
 export default images;

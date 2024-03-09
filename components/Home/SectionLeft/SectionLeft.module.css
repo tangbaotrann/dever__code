@@ -1,0 +1,51 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.title {
+  font-size: 4.2rem;
+  font-weight: 700;
+}
+
+.title:hover {
+  color: var(--text);
+  transition: all 1s;
+}
+
+.title__name {
+  font-weight: 900;
+  color: var(--text);
+}
+
+.title__name:hover {
+  color: var(--primary-text);
+  transition: all 1s;
+}
+
+.desc {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 2.4rem;
+}
+
+.desc__name_admin {
+  color: var(--primary-text);
+}
+
+.desc__name_admin:hover {
+  opacity: 0.6;
+  transition: all 0.5s;
+}
+
+.desc__name_logo {
+  color: var(--primary-text);
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
