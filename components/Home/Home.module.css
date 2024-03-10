@@ -1,5 +1,11 @@
 .container {
   display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.main {
+  display: flex;
   align-items: center;
   gap: 24px;
 }
@@ -15,6 +21,13 @@
 /* Responsive */
 @media screen and (max-width: 768px) {
   .container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    flex: 1;
+  }
+
+  .main {
     display: flex;
     flex-direction: column;
     gap: 40px;

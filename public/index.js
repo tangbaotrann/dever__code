@@ -50,6 +50,10 @@ export const icons = {
     src: "/assets/images/messenger.png",
     alt: "messenger-icon",
   },
+  QandA: {
+    src: "/assets/images/question.png",
+    alt: "question-icon",
+  },
 };
 
 export const slidesTop = [

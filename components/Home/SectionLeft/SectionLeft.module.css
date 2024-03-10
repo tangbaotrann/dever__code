@@ -29,6 +29,7 @@
   font-weight: 800;
   color: var(--text);
   line-height: 2.4rem;
+  text-align: justify;
 }
 
 .desc__name_admin {

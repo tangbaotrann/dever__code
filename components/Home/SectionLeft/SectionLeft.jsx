@@ -20,13 +20,14 @@ function SectionLeft() {
         <Link href={routes.ABOUT_URL}>
           <b className={styles.desc__name_admin}> Tăng Bảo Trấn </b>
         </Link>
-        và đây là blog cá nhân của mình. Mình muốn chia sẻ các kiến thực lập
-        trình Web đến các bạn qua các bài blog do chính mình tổng hợp và soạn
-        nhé. Các bài viết về các lỗi cũng như các giải pháp khắc phục lỗi một
-        cách chi tiết nhất để giúp các bạn mới bắt đầu tiếp cận học cũng như là
-        tất cả mọi người trên
+        và đây là blog cá nhân của mình. Mình muốn chia sẻ các kiến thức lập
+        trình Web đến các bạn qua các bài blog do chính mình soạn và tổng hợp
+        lại nên sẽ rất dễ hiểu cho các bạn khi xem và đọc. Các bài viết về các
+        lỗi trong quá trình xây dựng và phát triển một trang Web cũng như các
+        giải pháp khắc phục lỗi một cách chi tiết nhất để giúp các bạn mới bắt
+        đầu tiếp cận học lập trình cũng như là tất cả mọi người trên
         <b className={styles.desc__name_logo}> Dever.code</b> cùng tham khảo.
-        Nào, đọc đến đây được rồi, bắt đầu học thôi nào {":>"}
+        Nào, đọc đến đây được rồi, bắt tay vào code thôi nào {":>"}
       </span>
 
       <div className={styles.buttons}>

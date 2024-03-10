@@ -1,7 +1,7 @@
 export const constants = {
   HOME: "Trang chủ",
   BLOG: "Blog",
-  SUMMARY: "Tóm tắt",
+  SUMMARY: "Giới thiệu",
   LOGIN: "Đăng nhập",
   LOGOUT: "Đăng xuất",
 };

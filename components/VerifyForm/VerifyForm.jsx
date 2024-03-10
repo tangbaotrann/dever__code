@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { useFormState } from "react-dom";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 import styles from "./VerifyForm.module.css";
 import Form from "../Form/Form";
@@ -59,6 +60,20 @@ function VerifyForm({ session }) {
       />
 
       <ActionButton>Xác thực</ActionButton>
+
+      <div className={styles.footer}>
+        <span className={styles.login}>
+          <Link href={routes.REGISTER_URL} className={styles.login__link}>
+            Quay lại
+          </Link>
+        </span>
+
+        <span className={styles.login}>
+          <Link href={routes.LOGIN_URL} className={styles.login__link}>
+            Đăng nhập
+          </Link>
+        </span>
+      </div>
     </Form>
   );
 }

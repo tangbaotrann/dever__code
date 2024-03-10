@@ -1,0 +1,7 @@
+.desc {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 2.4rem;
+  text-align: justify;
+}

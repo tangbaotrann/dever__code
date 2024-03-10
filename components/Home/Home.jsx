@@ -5,12 +5,18 @@ import SectionRight from "./SectionRight/SectionRight";
 function Home() {
   return (
     <div className={styles.container}>
-      <div className={styles.section__left}>
-        <SectionLeft />
+      {/* Section 1 */}
+      <div className={styles.main}>
+        <div className={styles.section__left}>
+          <SectionLeft />
+        </div>
+        <div className={styles.section__right}>
+          <SectionRight />
+        </div>
       </div>
-      <div className={styles.section__right}>
-        <SectionRight />
-      </div>
+
+      {/* Section 2 */}
+      <div className={styles.main}></div>
     </div>
   );
 }

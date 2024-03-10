@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.title__name {
+  color: var(--text);
+  font-size: 3.2rem;
+  font-weight: 800;
+}
+
+.title__qa {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.image__qa {
+  margin-right: 12px;
+  animation: scale 4s both infinite;
+}
+
+@keyframes scale {
+  50% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .title__name {
+    font-size: 2.5rem;
+    font-weight: 800;
+  }
+}

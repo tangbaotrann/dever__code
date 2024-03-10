@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.message {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.name {
+  color: var(--text);
+  font-size: 1.8rem;
+  font-weight: 700;
+}

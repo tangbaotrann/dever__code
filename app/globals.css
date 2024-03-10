@@ -11,10 +11,17 @@
   /* define bg colors */
   --primary-bg: radial-gradient(
     circle,
-    rgba(0, 21, 59, 1) 0%,
+    rgb(4, 41, 109) 0%,
     rgb(245, 246, 252) 100%,
     rgba(255, 0, 0, 1) 100%
   );
+
+  /* radial-gradient(
+    circle,
+    rgba(0, 21, 59, 1) 0%,
+    rgb(245, 246, 252) 100%,
+    rgba(255, 0, 0, 1) 100%
+  ); */
 
   /* rgba(13, 19, 51, 1) 100%, */
 
@@ -36,7 +43,7 @@ body {
   font-family: var(--primary-font);
   background: var(--primary-bg);
   color: var(--primary-text);
-  height: 180vh;
+  /* height: 180vh; */
 }
 
 a {

@@ -75,12 +75,21 @@ function RegisterForm({ session }) {
 
       <ActionButton>Đăng ký</ActionButton>
 
-      <span className={styles.login}>
-        Bạn đã có tài khoản?
-        <Link href={routes.LOGIN_URL} className={styles.login__link}>
-          Đăng nhập ngay
-        </Link>
-      </span>
+      <div className={styles.footer}>
+        <span className={styles.login}>
+          Bạn đã có tài khoản?
+          <Link href={routes.LOGIN_URL} className={styles.login__link}>
+            Đăng nhập ngay
+          </Link>
+        </span>
+
+        <span className={styles.login}>
+          Bạn đã xác thực tài khoản?
+          <Link href={routes.VERIFY_URL} className={styles.login__link}>
+            Xác thực
+          </Link>
+        </span>
+      </div>
     </Form>
   );
 }

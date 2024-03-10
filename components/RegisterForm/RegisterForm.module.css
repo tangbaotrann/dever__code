@@ -37,6 +37,12 @@
   color: var(--message-failure);
 }
 
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 /* Responsive */
 @media screen and (max-width: 768px) {
   .form {
