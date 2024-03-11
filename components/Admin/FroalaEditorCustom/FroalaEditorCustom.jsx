@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 import FroalaEditor from "react-froala-wysiwyg";
@@ -68,9 +70,11 @@ function FroalaEditorCustom({ session }) {
 
         setModel("");
         localStorage.setItem("backUpContentBlog", "");
+        toast.success("Đăng bài thành công❤️❤️");
       })
       .catch((err) => {
         console.log(err);
+        toast.error("Đăng bài không thành công :((");
       });
   };
 
@@ -102,6 +106,19 @@ function FroalaEditorCustom({ session }) {
           <FroalaEditorView model={model} />
         </div>
       </div>
+
+      <ToastContainer
+        position="top-right"
+        autoClose={2500}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      ></ToastContainer>
     </div>
   );
 }

@@ -1,3 +1,5 @@
+import images from "@/public";
+
 export const authConfig = {
   pages: {
     signIn: "/login",

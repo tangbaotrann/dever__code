@@ -3,6 +3,10 @@ const images = {
     src: "/assets/images/noavatar.png",
     alt: "avatar-image",
   },
+  bkAvatar: {
+    src: "/assets/images/anh-the.jpg",
+    alt: "bk-avatar-image",
+  },
 };
 
 export const icons = {

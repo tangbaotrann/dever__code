@@ -1,0 +1,46 @@
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.top__date {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-gray-900);
+}
+
+.top__avatar {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.content__blog {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.image__content {
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.text {
+  font-size: 2.4rem;
+  font-weight: 600;
+  white-space: nowrap;
+  width: 320px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.read__more {
+  font-size: 1.5rem;
+  text-decoration: underline;
+}
+
+.read__more:hover {
+  opacity: 0.6;
+  transition: all 0.5s;
+}
