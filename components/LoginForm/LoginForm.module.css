@@ -16,11 +16,12 @@
 }
 
 .register {
-  font-size: 1.2rem;
+  font-size: 0.8rem;
 }
 
 .register__link {
   margin-left: 4px;
+  font-size: 0.8rem;
   font-weight: 600;
   border-bottom: 1px solid var(--primary-text);
 }
@@ -31,7 +32,7 @@
 }
 
 .message__failure {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
   text-align: center;
   color: var(--message-failure);
@@ -41,5 +42,11 @@
 @media screen and (max-width: 768px) {
   .form {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .title {
+    font-size: 2rem;
   }
 }

@@ -22,7 +22,7 @@
 }
 
 .title {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: bold;
 }
 
@@ -33,12 +33,12 @@
 }
 
 .info__item_label {
-  font-size: 1.4rem;
+  font-size: 1rem;
   font-weight: 300;
 }
 
 .info__item_value {
-  font-size: 1.4rem;
+  font-size: 1rem;
   font-weight: 500;
 }
 

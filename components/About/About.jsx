@@ -24,7 +24,7 @@ function About() {
 
       <div className={styles.main}>
         <Title icon>
-          Tại sao lại là
+          Tại sao tên
           <b className={styles.title__name}>{" “Dever.code” "}</b> mà không phải
           là một tên khác?
         </Title>

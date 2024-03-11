@@ -10,6 +10,7 @@
 .title {
   font-size: 2.4rem;
   font-weight: 700;
+  text-align: center;
 }
 
 .type__login {
@@ -22,5 +23,16 @@
 @media screen and (max-width: 768px) {
   .container {
     margin: 40px;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .type__login {
+    display: flex;
+    flex-direction: column;
   }
 }

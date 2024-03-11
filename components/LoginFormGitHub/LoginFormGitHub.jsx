@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-// import styles from "./LoginFormGitHub.module.css";
+import styles from "./LoginFormGitHub.module.css";
 import Form from "../Form/Form";
 import { loginUserWithGithub } from "@/lib/actions";
 import { icons } from "@/public";
@@ -12,7 +12,7 @@ function LoginFormGitHub() {
       title="Đăng nhập nhanh với tài khoản Github của bạn."
       action={loginUserWithGithub}
     >
-      <ActionButton>
+      <ActionButton className={styles.button__github}>
         <Image
           src={icons.github.src}
           alt={icons.github.alt}

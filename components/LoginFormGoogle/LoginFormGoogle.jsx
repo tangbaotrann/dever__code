@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-// import styles from "./LoginFormGoogle.module.css";
+import styles from "./LoginFormGoogle.module.css";
 import { icons } from "@/public";
 import Form from "../Form/Form";
 import { loginUserWithGoogle } from "@/lib/actions";
@@ -12,7 +12,7 @@ function LoginFormGoogle() {
       title="Đăng nhập nhanh với tài khoản Google của bạn."
       action={loginUserWithGoogle}
     >
-      <ActionButton>
+      <ActionButton className={styles.button__gg}>
         <Image
           src={icons.google.src}
           alt={icons.google.alt}

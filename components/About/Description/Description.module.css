@@ -1,7 +1,13 @@
 .desc {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 800;
   color: var(--text);
   line-height: 2.4rem;
   text-align: justify;
+}
+
+@media screen and (max-width: 475px) {
+  .desc {
+    font-size: 1.2rem;
+  }
 }

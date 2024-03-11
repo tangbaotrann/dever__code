@@ -1,4 +1,3 @@
-import { fetchPosts } from "@/lib/data";
 import styles from "./home.module.css";
 import Home from "@/components/Home/Home";
 

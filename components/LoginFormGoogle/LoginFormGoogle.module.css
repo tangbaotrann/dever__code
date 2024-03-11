@@ -1,5 +1,6 @@
-.button__google {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+/* Responsive */
+@media screen and (max-width: 475px) {
+  .button__gg {
+    font-size: 1rem;
+  }
 }

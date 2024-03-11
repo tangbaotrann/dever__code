@@ -32,7 +32,7 @@ function SectionLeft() {
 
       <div className={styles.buttons}>
         <Link href={routes.BLOG_URL}>
-          <ActionButton>
+          <ActionButton className={styles.button__mobile}>
             <Image
               src={icons.blog.src}
               alt={icons.blog.alt}
@@ -43,7 +43,7 @@ function SectionLeft() {
           </ActionButton>
         </Link>
         <Link href={constants.facebook} target="_blank">
-          <ActionButton>
+          <ActionButton className={styles.button__mobile}>
             <Image
               src={icons.messenger.src}
               alt={icons.messenger.alt}

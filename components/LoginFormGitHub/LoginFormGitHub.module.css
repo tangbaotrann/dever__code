@@ -1,1 +1,6 @@
-
+/* Responsive */
+@media screen and (max-width: 475px) {
+  .button__github {
+    font-size: 1rem;
+  }
+}
