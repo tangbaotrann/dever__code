@@ -7,7 +7,7 @@ import styles from "./ActionButton.module.css";
 import Button from "../Button";
 import { icons } from "@/public";
 
-function ActionButton({ children, className }) {
+function ActionButton({ children, className, onClick }) {
   const { pending } = useFormStatus();
 
   return (
@@ -20,6 +20,7 @@ function ActionButton({ children, className }) {
       }`}
       type="submit"
       disabled={pending}
+      onClick={onClick}
     >
       {pending && (
         <Image

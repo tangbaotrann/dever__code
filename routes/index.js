@@ -4,6 +4,7 @@ export const constants = {
   SUMMARY: "Giới thiệu",
   LOGIN: "Đăng nhập",
   LOGOUT: "Đăng xuất",
+  ADMIN: "Admin",
 };
 
 export const routes = {
@@ -13,6 +14,7 @@ export const routes = {
   REGISTER_URL: "/register",
   LOGIN_URL: "/login",
   VERIFY_URL: "/verify",
+  ADMIN_URL: "/admin",
 };
 
 // Header links

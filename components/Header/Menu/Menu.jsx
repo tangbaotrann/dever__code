@@ -34,6 +34,12 @@ function Menu({ session }) {
           {/* Check user login */}
           {session?.user ? (
             <>
+              {session?.user?.isAdmin && (
+                <MenuItem
+                  menu={{ title: constants.ADMIN, url: routes.ADMIN_URL }}
+                  pathName={pathName}
+                />
+              )}
               <Logout />
               {/* Avatar + name */}
               <div className={styles.user}>
@@ -94,6 +100,12 @@ function Menu({ session }) {
           {/* Check user login */}
           {session?.user ? (
             <>
+              {session?.user?.isAdmin && (
+                <MenuItem
+                  menu={{ title: constants.ADMIN, url: routes.ADMIN_URL }}
+                  pathName={pathName}
+                />
+              )}
               <Logout />
               {/* Avatar + name */}
               <div className={styles.user}>
