@@ -66,6 +66,18 @@ export const icons = {
     src: "/assets/images/prev-page.png",
     alt: "prev-page-icon",
   },
+  search: {
+    src: "/assets/images/search.png",
+    alt: "search-icon",
+  },
+  ascending: {
+    src: "/assets/images/ascending.png",
+    alt: "ascending-icon",
+  },
+  descending: {
+    src: "/assets/images/descending.png",
+    alt: "descending-icon",
+  },
 };
 
 export const slidesTop = [

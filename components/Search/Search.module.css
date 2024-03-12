@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.icon__search {
+  cursor: pointer;
+}
+
+.icon__search:hover {
+  opacity: 0.8;
+}
