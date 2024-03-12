@@ -5,6 +5,7 @@ import dayjs from "dayjs";
 import styles from "./BlogItem.module.css";
 import images, { icons } from "@/public";
 import { routes } from "@/routes";
+import ActionButton from "@/components/Button/ActionButton/ActionButton";
 
 function BlogItem({ blog }) {
   return (
@@ -14,8 +15,8 @@ function BlogItem({ blog }) {
           {dayjs(blog.createdAt).format("DD/MM/YYYY - HH:mm a")}
         </span>
         <Image
-          src={images.avatar.src}
-          alt={images.avatar.alt}
+          src={images.bkAvatar.src}
+          alt={images.bkAvatar.alt}
           width={36}
           height={36}
           className={styles.top__avatar}
@@ -24,24 +25,25 @@ function BlogItem({ blog }) {
 
       <div className={styles.image__blog}>
         <Image
-          src={images.avatar.src}
+          src={blog?.images[0] || images.avatar.src}
           alt={icons.blog.alt}
-          width={320}
-          height={240}
+          width="0"
+          height="0"
+          sizes="100vw"
+          style={{ width: "100%", height: "250px", borderRadius: "6px" }}
           className={styles.image__content}
         />
       </div>
 
       <div className={styles.content__blog}>
-        {/* <h1
-          className={styles.text}
-          dangerouslySetInnerHTML={{ __html: blog.desc }}
-        ></h1> */}
+        <h1 className={styles.text__title}>{blog?.title}</h1>
         <Link
           href={`${routes.BLOG_URL}/${blog._id}`}
           className={styles.read__more}
         >
-          Xem thêm...
+          <ActionButton className={styles.btn__more_mobile}>
+            Xem thêm...
+          </ActionButton>
         </Link>
       </div>
     </>

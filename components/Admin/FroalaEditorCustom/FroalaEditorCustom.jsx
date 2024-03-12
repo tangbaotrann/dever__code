@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { useRouter } from "next/navigation";
 
 import FroalaEditor from "react-froala-wysiwyg";
 
@@ -20,11 +20,19 @@ import styles from "./FroalaEditorCustom.module.css";
 import { storage } from "@/utils/firebase";
 import BlogPostForm from "../BlogPostForm/BlogPostForm";
 import { saveBlog } from "@/lib/blog/action";
+import BlogPostTitle from "../BlogPostTitle/BlogPostTitle";
+import useDebounce from "@/hooks/useDebounce/useDebounce";
+import ToastMessage from "@/components/ToastMessage/ToastMessage";
+import { routes } from "@/routes";
 
 function FroalaEditorCustom({ session }) {
   const [model, setModel] = useState(() => {
     return localStorage.getItem("backUpContentBlog") || "";
   });
+  const [title, setTitle] = useState("");
+  const debounceValueTitle = useDebounce(title, 600);
+
+  const router = useRouter();
 
   // handle save image to server - handleSaveImage
   const handlePostBlog = async () => {
@@ -32,9 +40,15 @@ function FroalaEditorCustom({ session }) {
     let match;
     const images = [];
 
+    // Check title
+    if (!debounceValueTitle) {
+      toast.error("Bạn cần nhập tiêu đề cho bài viết!");
+      return;
+    }
+
     // Check model
     if (model === "") {
-      alert("Bạn cần phải nhập thông tin để có thể đăng bài viết!");
+      toast.error("Bạn cần phải nhập thông tin để có thể đăng bài viết!");
       return;
     }
 
@@ -66,11 +80,13 @@ function FroalaEditorCustom({ session }) {
           model: model,
           listUrlImageFirebase: imageUrls,
           userId: session.user.id,
+          title: debounceValueTitle,
         });
 
         setModel("");
+        setTitle("");
         localStorage.setItem("backUpContentBlog", "");
-        toast.success("Đăng bài thành công❤️❤️");
+        router.push(routes.BLOG_URL);
       })
       .catch((err) => {
         console.log(err);
@@ -78,10 +94,19 @@ function FroalaEditorCustom({ session }) {
       });
   };
 
+  // handle change title blog post
+  const handleChangeTitleBlog = (e) => {
+    const value = e.target.value;
+
+    setTitle(value);
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.main}>
         <div className={styles.left}>
+          <BlogPostTitle onChange={handleChangeTitleBlog} />
+
           <FroalaEditor
             model={model}
             onModelChange={(e) => setModel(e)}
@@ -103,22 +128,14 @@ function FroalaEditorCustom({ session }) {
         </div>
 
         <div className={styles.right}>
+          <h1 className={styles.right__title_blog}>
+            {debounceValueTitle ? debounceValueTitle : ""}
+          </h1>
           <FroalaEditorView model={model} />
         </div>
       </div>
 
-      <ToastContainer
-        position="top-right"
-        autoClose={2500}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      ></ToastContainer>
+      <ToastMessage />
     </div>
   );
 }

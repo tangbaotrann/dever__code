@@ -28,7 +28,12 @@ function BlogId({ post }) {
     setHtmlContent(modifiedHtmlContent);
   }, [post]);
 
-  return <div dangerouslySetInnerHTML={{ __html: htmlContent }} />;
+  return (
+    <>
+      <h1>{post?.title}</h1>
+      <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+    </>
+  );
 }
 
 export default BlogId;
