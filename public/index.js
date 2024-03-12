@@ -58,6 +58,14 @@ export const icons = {
     src: "/assets/images/question.png",
     alt: "question-icon",
   },
+  nextPage: {
+    src: "/assets/images/next-page.png",
+    alt: "next-page-icon",
+  },
+  prevPage: {
+    src: "/assets/images/prev-page.png",
+    alt: "prev-page-icon",
+  },
 };
 
 export const slidesTop = [

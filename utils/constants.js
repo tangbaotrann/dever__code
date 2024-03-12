@@ -30,4 +30,7 @@ export const answers = {
   },
 };
 
+// Default number pagination for blog post
+export const DEFAULT_NUM_PAGINATION = 12;
+
 export default constants;

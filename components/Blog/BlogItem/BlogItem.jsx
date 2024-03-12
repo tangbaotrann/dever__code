@@ -7,12 +7,12 @@ import images, { icons } from "@/public";
 import { routes } from "@/routes";
 import ActionButton from "@/components/Button/ActionButton/ActionButton";
 
-function BlogItem({ blog }) {
+function BlogItem({ post }) {
   return (
     <>
       <div className={styles.top}>
         <span className={styles.top__date}>
-          {dayjs(blog.createdAt).format("DD/MM/YYYY - HH:mm a")}
+          {dayjs(post.createdAt).format("DD/MM/YYYY - HH:mm a")}
         </span>
         <Image
           src={images.bkAvatar.src}
@@ -25,7 +25,7 @@ function BlogItem({ blog }) {
 
       <div className={styles.image__blog}>
         <Image
-          src={blog?.images[0] || images.avatar.src}
+          src={post?.images[0] || images.avatar.src}
           alt={icons.blog.alt}
           width="0"
           height="0"
@@ -36,9 +36,9 @@ function BlogItem({ blog }) {
       </div>
 
       <div className={styles.content__blog}>
-        <h1 className={styles.text__title}>{blog?.title}</h1>
+        <h1 className={styles.text__title}>{post?.title}</h1>
         <Link
-          href={`${routes.BLOG_URL}/${blog._id}`}
+          href={`${routes.BLOG_URL}/${post._id}`}
           className={styles.read__more}
         >
           <ActionButton className={styles.btn__more_mobile}>

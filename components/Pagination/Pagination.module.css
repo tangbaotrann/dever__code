@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 24px 0;
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

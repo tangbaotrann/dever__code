@@ -1,15 +1,20 @@
+import Pagination from "../Pagination/Pagination";
 import styles from "./Blog.module.css";
 import BlogItem from "./BlogItem/BlogItem";
 
-function Blog({ blogs }) {
+function Blog({ posts, count, totalPages }) {
   return (
-    <div className={styles.container}>
-      {blogs.map((blog) => (
-        <div className={styles.blog__item} key={blog._id}>
-          <BlogItem blog={blog} />
-        </div>
-      ))}
-    </div>
+    <>
+      <div className={styles.container}>
+        {posts.map((post) => (
+          <div className={styles.blog__item} key={post._id}>
+            <BlogItem post={post} />
+          </div>
+        ))}
+      </div>
+      {/* Pagination */}
+      <Pagination count={count} totalPages={totalPages} />
+    </>
   );
 }
 
