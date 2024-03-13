@@ -3,6 +3,12 @@ import LoginForm from "@/components/LoginForm/LoginForm";
 import LoginFormGitHub from "@/components/LoginFormGitHub/LoginFormGitHub";
 import LoginFormGoogle from "@/components/LoginFormGoogle/LoginFormGoogle";
 
+export const metadata = {
+  title: "Đăng nhập",
+  description:
+    "Welcome to Dever.code Login - Useful blog posts for developers, programmers web at Dever.code.",
+};
+
 function LoginPage() {
   return (
     <div className={styles.container}>

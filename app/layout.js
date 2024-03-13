@@ -7,8 +7,12 @@ import Footer from "@/components/Footer/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Dever code",
-  description: "Dever code by _tbtcodeofficial",
+  title: {
+    default: "Dever.code",
+    template: "%s | Dever.code",
+  },
+  description:
+    "Dever.code by tangbaotrann - Useful blog posts for developers, programmers web at Dever.code.",
 };
 
 export default function RootLayout({ children }) {
