@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { toast } from "react-toastify";
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { useRouter } from "next/navigation";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 import FroalaEditor from "react-froala-wysiwyg";
 

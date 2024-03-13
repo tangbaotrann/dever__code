@@ -1,12 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import { useState } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 import styles from "./Sort.module.css";
 import ActionButton from "../Button/ActionButton/ActionButton";
 import { icons } from "@/public";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useState } from "react";
 
 function Sort() {
   const [activeColor, setActiveColor] = useState(false);
@@ -17,7 +17,6 @@ function Sort() {
 
   // handle sort blog with parameters
   const handleSortBlog = (type) => {
-    console.log("type", type);
     const sort = "sort";
     const asc = "asc";
     const desc = "desc";

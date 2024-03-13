@@ -48,7 +48,7 @@ function Pagination({ count, totalPages }) {
         Trước
       </ActionButton>
       <i>
-        {currentPage}/ {totalPages}
+        {currentPage}/ {totalPages} trang
       </i>
       <ActionButton
         onClick={() => handleClickChangePage("next__page")}
