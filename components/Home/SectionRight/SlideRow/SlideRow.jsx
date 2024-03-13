@@ -15,7 +15,7 @@ function SlideRow({ slideTop, slideBottom }) {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [slidesTop.length]);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -23,7 +23,7 @@ function SlideRow({ slideTop, slideBottom }) {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [slidesBottom.length]);
+  }, []);
 
   return (
     <div className={styles.container}>
