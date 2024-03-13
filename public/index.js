@@ -4,7 +4,7 @@ const images = {
     alt: "avatar-image",
   },
   bkAvatar: {
-    src: "/assets/images/anh-the.jpg",
+    src: "https://firebasestorage.googleapis.com/v0/b/devercode-72ca6.appspot.com/o/images%2Fanh-the.jpg?alt=media&token=a83bd906-5878-410f-ae6b-30a95ea0e514",
     alt: "bk-avatar-image",
   },
 };
@@ -55,27 +55,27 @@ export const icons = {
     alt: "messenger-icon",
   },
   QandA: {
-    src: "/assets/images/question.png",
+    src: "https://firebasestorage.googleapis.com/v0/b/devercode-72ca6.appspot.com/o/images%2Fquestion.png?alt=media&token=0ab5df12-b917-4736-a288-cdca29863e71",
     alt: "question-icon",
   },
   nextPage: {
-    src: "/assets/images/next-page.png",
+    src: "https://firebasestorage.googleapis.com/v0/b/devercode-72ca6.appspot.com/o/images%2Fnext-page.png?alt=media&token=f788c8c8-05f5-4e69-a11e-92390bf338ce",
     alt: "next-page-icon",
   },
   prevPage: {
-    src: "/assets/images/prev-page.png",
+    src: "https://firebasestorage.googleapis.com/v0/b/devercode-72ca6.appspot.com/o/images%2Fprev-page.png?alt=media&token=32a5ac7f-e496-4650-9dbf-0786aa466e3f",
     alt: "prev-page-icon",
   },
   search: {
-    src: "/assets/images/search.png",
+    src: "https://firebasestorage.googleapis.com/v0/b/devercode-72ca6.appspot.com/o/images%2Fsearch.png?alt=media&token=2fdf5818-eed6-4880-9c07-6d0695b08c67",
     alt: "search-icon",
   },
   ascending: {
-    src: "/assets/images/ascending.png",
+    src: "https://firebasestorage.googleapis.com/v0/b/devercode-72ca6.appspot.com/o/images%2Fascending.png?alt=media&token=ffb5c539-c292-4e79-a223-e2dd6738ce14",
     alt: "ascending-icon",
   },
   descending: {
-    src: "/assets/images/descending.png",
+    src: "https://firebasestorage.googleapis.com/v0/b/devercode-72ca6.appspot.com/o/images%2Fdescending.png?alt=media&token=a754ceac-a2c7-4cc7-b242-c588270bc3f2",
     alt: "descending-icon",
   },
 };
