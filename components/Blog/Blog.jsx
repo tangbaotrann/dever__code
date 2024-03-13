@@ -1,36 +1,15 @@
-import Image from "next/image";
-
 import styles from "./Blog.module.css";
 import Pagination from "../Pagination/Pagination";
 import Search from "../Search/Search";
 import BlogItem from "./BlogItem/BlogItem";
-import ActionButton from "../Button/ActionButton/ActionButton";
-import { icons } from "@/public";
+import Sort from "../Sort/Sort";
 
 function Blog({ posts, count, totalPages }) {
   return (
     <>
       <div className={styles.top}>
-        <div className={styles.sort}>
-          <ActionButton className={styles.btn__sort_mobile}>
-            <Image
-              src={icons.ascending.src}
-              alt={icons.ascending.alt}
-              width={24}
-              height={24}
-            />
-            Mới nhất
-          </ActionButton>
-          <ActionButton className={styles.btn__sort_mobile}>
-            <Image
-              src={icons.descending.src}
-              alt={icons.descending.alt}
-              width={24}
-              height={24}
-            />
-            Cũ nhất
-          </ActionButton>
-        </div>
+        {/* Sort */}
+        <Sort />
 
         {/* Search */}
         <Search />

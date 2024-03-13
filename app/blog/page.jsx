@@ -5,8 +5,9 @@ import Blog from "@/components/Blog/Blog";
 async function BlogPage({ searchParams }) {
   const q = searchParams?.q || "";
   const page = searchParams?.page || 1;
+  const sort = searchParams?.sort || "desc";
 
-  const { count, posts, totalPages } = await fetchPosts(q, page);
+  const { count, posts, totalPages } = await fetchPosts(q, page, sort);
 
   return (
     <div className={styles.container}>

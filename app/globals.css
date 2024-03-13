@@ -9,6 +9,12 @@
   --header-nav: #000000;
   --header-border-bottom: #333;
   --message-failure: #ff0000;
+  --button-active: radial-gradient(
+    circle,
+    rgb(4, 41, 109) 0%,
+    rgb(185, 194, 250) 100%,
+    rgb(255, 0, 0) 100%
+  );
 
   /* define bg colors */
   --primary-bg: radial-gradient(

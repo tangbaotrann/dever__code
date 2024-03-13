@@ -1,0 +1,17 @@
+.sort {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sort .btn__active {
+  background: var(--button-active);
+}
+
+/* Responsive */
+@media screen and (max-width: 480px) {
+  .sort .btn__sort_asc,
+  .sort .btn__sort_desc {
+    font-size: 1rem;
+  }
+}
