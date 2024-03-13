@@ -47,7 +47,6 @@ body {
   font-family: var(--primary-font);
   background: var(--primary-bg);
   color: var(--primary-text);
-  /* height: 180vh; */
 }
 
 a {
@@ -122,9 +121,3 @@ html *::-webkit-scrollbar-track {
   border-radius: 0;
   background-color: rgba(0, 0, 0, 0);
 }
-
-/* selected text */
-/* ::selection {
-  background-color: #08080810;
-  color: #fff;
-} */
