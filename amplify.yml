@@ -7,7 +7,7 @@ frontend:
     build:
       commands:
         - env | grep -e MONGODB_URI >> .env.production
-        #- env | grep -e NEXT_PUBLIC_ >> .env.production
+        - env | grep -e AUTH_URL -e AUTH_SECRET >> .env.production
         - npm run build
   artifacts:
     baseDirectory: .next
