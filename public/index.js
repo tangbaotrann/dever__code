@@ -126,4 +126,19 @@ export const slidesBottom = [
   },
 ];
 
+export const slidesIntroAdmin = [
+  {
+    src: "https://firebasestorage.googleapis.com/v0/b/devercode-72ca6.appspot.com/o/images%2Fdoc_docker.png?alt=media&token=449d83fc-99bf-41ac-a60f-2f814abc0aba",
+    alt: "doc-docker-1",
+  },
+  {
+    src: "https://firebasestorage.googleapis.com/v0/b/devercode-72ca6.appspot.com/o/images%2Fdoc1_docker.png?alt=media&token=03455b69-79de-4dfa-9883-5fbf1f67e453",
+    alt: "doc-docker-2",
+  },
+  {
+    src: "https://firebasestorage.googleapis.com/v0/b/devercode-72ca6.appspot.com/o/images%2Fdoc3_docker.png?alt=media&token=054f8dac-a9a4-4da4-be93-e39c4255c909",
+    alt: "doc-docker-3",
+  },
+];
+
 export default images;

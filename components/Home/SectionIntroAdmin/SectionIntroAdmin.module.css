@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  gap: 24px;
+  margin: 42px 0;
+}
+
+.section__left {
+  flex: 1;
+}
+
+.section__right {
+  flex: 0.5;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+}

@@ -1,6 +1,10 @@
+import Image from "next/image";
+
 import styles from "./Home.module.css";
 import SectionLeft from "./SectionLeft/SectionLeft";
 import SectionRight from "./SectionRight/SectionRight";
+import images from "@/public";
+import SectionIntroAdmin from "./SectionIntroAdmin/SectionIntroAdmin";
 
 function Home() {
   return (
@@ -16,7 +20,7 @@ function Home() {
       </div>
 
       {/* Section 2 */}
-      <div className={styles.main}></div>
+      <SectionIntroAdmin />
     </div>
   );
 }
