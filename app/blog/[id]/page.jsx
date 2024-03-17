@@ -1,3 +1,4 @@
+import { auth } from "@/app/auth";
 import styles from "./BlogPageId.module.css";
 
 import BlogId from "@/components/Blog/[id]/BlogId";
@@ -13,9 +14,11 @@ async function BlogDetail({ params }) {
   const { id } = params;
   const post = await fetchPostById(id);
 
+  const session = await auth();
+
   return (
     <div className={styles.container}>
-      <BlogId post={JSON.parse(JSON.stringify(post))} />
+      <BlogId post={JSON.parse(JSON.stringify(post))} session={session} />
     </div>
   );
 }

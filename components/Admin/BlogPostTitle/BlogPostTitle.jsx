@@ -1,7 +1,7 @@
 import Input from "@/components/Input/Input";
 import styles from "./BlogPostTitle.module.css";
 
-function BlogPostTitle({ onChange }) {
+function BlogPostTitle({ onChange, postUpdateId }) {
   return (
     <div className={styles.container}>
       <Input
@@ -11,6 +11,7 @@ function BlogPostTitle({ onChange }) {
         name="title"
         onChange={onChange}
         placeholder="Nhập tiêu đề cho bài viết..."
+        defaultValue={postUpdateId ? postUpdateId.title : ""}
       />
     </div>
   );

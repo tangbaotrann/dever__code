@@ -6,11 +6,15 @@ import ActionButton from "@/components/Button/ActionButton/ActionButton";
 import Form from "@/components/Form/Form";
 import { icons } from "@/public";
 
-function BlogPostForm({ handlePostBlog }) {
+function BlogPostForm({ handlePostBlog, postUpdateId }) {
   const [state, formAction] = useFormState(handlePostBlog, undefined);
 
   return (
-    <Form title="Đăng bài" action={formAction} className={styles.form}>
+    <Form
+      title={postUpdateId ? "Cập nhật" : "Đăng bài"}
+      action={formAction}
+      className={styles.form}
+    >
       <ActionButton>
         <Image
           src={icons.blog.src}
@@ -18,7 +22,7 @@ function BlogPostForm({ handlePostBlog }) {
           width={28}
           height={28}
         />
-        Đăng bài
+        {postUpdateId ? "Cập nhật" : "Đăng bài"}
       </ActionButton>
     </Form>
   );

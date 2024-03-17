@@ -19,26 +19,37 @@ import FroalaEditorView from "react-froala-wysiwyg/FroalaEditorView";
 import styles from "./FroalaEditorCustom.module.css";
 import { storage } from "@/utils/firebase";
 import BlogPostForm from "../BlogPostForm/BlogPostForm";
-import { saveBlog } from "@/lib/blog/action";
+import { saveBlog, updateBlog } from "@/lib/blog/action";
 import BlogPostTitle from "../BlogPostTitle/BlogPostTitle";
 import useDebounce from "@/hooks/useDebounce/useDebounce";
 import ToastMessage from "@/components/ToastMessage/ToastMessage";
 import { routes } from "@/routes";
+import useParseUrlImg from "@/hooks/useParseUrlImg/useParseUrlImg";
 
-function FroalaEditorCustom({ session }) {
+function FroalaEditorCustom({ session, postUpdateId }) {
   const [model, setModel] = useState(() => {
     return localStorage.getItem("backUpContentBlog") || "";
   });
-  const [title, setTitle] = useState("");
+  const [title, setTitle] = useState(postUpdateId?.title || "");
+  const [htmlContentUpdate, setHtmlContentUpdate] = useState("");
+
   const debounceValueTitle = useDebounce(title, 600);
 
   const router = useRouter();
+
+  //handle update blog post
+  const htmlContent = useParseUrlImg(postUpdateId);
 
   // handle save image to server - handleSaveImage
   const handlePostBlog = async () => {
     const regex = /<img.*?src="(.*?)"/g;
     let match;
     const images = [];
+    const desc = htmlContentUpdate
+      ? htmlContentUpdate
+      : htmlContent
+      ? htmlContent
+      : model;
 
     // Check title
     if (!debounceValueTitle) {
@@ -46,13 +57,8 @@ function FroalaEditorCustom({ session }) {
       return;
     }
 
-    // Check model
-    if (model === "") {
-      toast.error("Bạn cần phải nhập thông tin để có thể đăng bài viết!");
-      return;
-    }
-
-    while ((match = regex.exec(model)) !== null) {
+    // find regex (only elements <img />)
+    while ((match = regex.exec(desc)) !== null) {
       images.push(match[1]);
     }
 
@@ -76,15 +82,42 @@ function FroalaEditorCustom({ session }) {
     // save to database
     Promise.all(uploadPromises)
       .then((imageUrls) => {
-        saveBlog({
-          model: model,
-          listUrlImageFirebase: imageUrls,
-          userId: session.user.id,
-          title: debounceValueTitle,
-        });
+        if (postUpdateId) {
+          // check model
+          if (htmlContentUpdate === "") {
+            toast.error("Bạn cần phải nhập thông tin để cập nhật bài viết!");
+            return;
+          }
+
+          // filter option image when update blog (img !null)
+          const isOptionImage = imageUrls.filter((url) => url);
+
+          const listImages = [...postUpdateId.images, ...isOptionImage];
+
+          updateBlog({
+            _id: postUpdateId._id,
+            model: htmlContentUpdate ? htmlContentUpdate : htmlContent,
+            listUrlImageFirebase: listImages,
+            title: debounceValueTitle,
+          });
+        } else {
+          // Check model
+          if (model === "") {
+            toast.error("Bạn cần phải nhập thông tin để đăng bài viết!");
+            return;
+          }
+
+          saveBlog({
+            model: model,
+            listUrlImageFirebase: imageUrls,
+            userId: session.user.id,
+            title: debounceValueTitle,
+          });
+        }
 
         setModel("");
         setTitle("");
+        setHtmlContentUpdate("");
         localStorage.setItem("backUpContentBlog", "");
         router.push(routes.BLOG_URL);
       })
@@ -101,15 +134,29 @@ function FroalaEditorCustom({ session }) {
     setTitle(value);
   };
 
+  // handle change write blog post
+  const handleChangeWriteBlog = (e) => {
+    postUpdateId ? setHtmlContentUpdate(e) : setModel(e);
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.main}>
         <div className={styles.left}>
-          <BlogPostTitle onChange={handleChangeTitleBlog} />
+          <BlogPostTitle
+            onChange={handleChangeTitleBlog}
+            postUpdateId={postUpdateId}
+          />
 
           <FroalaEditor
-            model={model}
-            onModelChange={(e) => setModel(e)}
+            model={
+              htmlContentUpdate
+                ? htmlContentUpdate
+                : htmlContent
+                ? htmlContent
+                : model
+            }
+            onModelChange={(e) => handleChangeWriteBlog(e)}
             config={{
               placeholderText: "Viết blog ngay ở đây...",
               charCounter: true,
@@ -124,14 +171,25 @@ function FroalaEditorCustom({ session }) {
             tag="textarea"
           />
 
-          <BlogPostForm handlePostBlog={handlePostBlog} />
+          <BlogPostForm
+            handlePostBlog={handlePostBlog}
+            postUpdateId={postUpdateId}
+          />
         </div>
 
         <div className={styles.right}>
           <h1 className={styles.right__title_blog}>
             {debounceValueTitle ? debounceValueTitle : ""}
           </h1>
-          <FroalaEditorView model={model} />
+          <FroalaEditorView
+            model={
+              htmlContentUpdate
+                ? htmlContentUpdate
+                : htmlContent
+                ? htmlContent
+                : model
+            }
+          />
         </div>
       </div>
 

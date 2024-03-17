@@ -8,12 +8,12 @@ const FroalaEditorCustomNoSSR = dynamic(
   { ssr: false }
 );
 
-async function Admin() {
+async function Admin({ postUpdateId }) {
   const session = await auth();
 
   return (
     <div className={styles.container}>
-      <FroalaEditorCustomNoSSR session={session} />
+      <FroalaEditorCustomNoSSR session={session} postUpdateId={postUpdateId} />
     </div>
   );
 }

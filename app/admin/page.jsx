@@ -1,4 +1,5 @@
 import styles from "./admin.module.css";
+import { fetchPostById } from "@/lib/blog/action";
 import Admin from "@/components/Admin/Admin";
 
 export const metadata = {
@@ -7,10 +8,18 @@ export const metadata = {
     "Welcome to Dever.code Admin - Useful blog posts for developers, programmers web at Dever.code.",
 };
 
-function AdminPage() {
+async function AdminPage({ searchParams }) {
+  const updateId = searchParams?.update || "";
+
+  const postUpdateId = await fetchPostById(updateId);
+
   return (
     <div className={styles.container}>
-      <Admin />
+      <Admin
+        postUpdateId={
+          postUpdateId ? JSON.parse(JSON.stringify(postUpdateId)) : postUpdateId
+        }
+      />
     </div>
   );
 }

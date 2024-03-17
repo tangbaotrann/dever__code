@@ -17,7 +17,11 @@ async function BlogPage({ searchParams }) {
 
   return (
     <div className={styles.container}>
-      <Blog posts={posts} count={count} totalPages={totalPages} />
+      <Blog
+        posts={posts ? JSON.parse(JSON.stringify(posts)) : posts}
+        count={count}
+        totalPages={totalPages}
+      />
     </div>
   );
 }

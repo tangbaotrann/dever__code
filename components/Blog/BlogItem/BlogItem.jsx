@@ -12,7 +12,7 @@ function BlogItem({ post }) {
     <>
       <div className={styles.top}>
         <span className={styles.top__date}>
-          {dayjs(post.createdAt).format("DD/MM/YYYY - HH:mm a")}
+          {dayjs(post.updatedAt).format("DD/MM/YYYY - HH:mm a")}
         </span>
         <Image
           src={images.bkAvatar.src}
@@ -25,7 +25,7 @@ function BlogItem({ post }) {
 
       <div className={styles.image__blog}>
         <Image
-          src={post?.images[0] || images.avatar.src}
+          src={post?.images.filter((url) => url)[0] || images.avatar.src}
           alt={icons.blog.alt}
           width="0"
           height="0"

@@ -1,35 +1,25 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import cheerio from "cheerio";
+import Link from "next/link";
 
-function BlogId({ post }) {
-  const [htmlContent, setHtmlContent] = useState("");
+import styles from "./BlogId.module.css";
+import ActionButton from "@/components/Button/ActionButton/ActionButton";
+import { routes } from "@/routes";
+import useParseUrlImg from "@/hooks/useParseUrlImg/useParseUrlImg";
 
-  useEffect(() => {
-    const initialHtmlContent = `${post.desc}`;
-
-    const $ = cheerio.load(initialHtmlContent);
-
-    // get all img elements from HTML
-    const imgTags = $("img");
-
-    // Change attr value "src" for "img"
-    imgTags.each((index, element) => {
-      const imageUrl = post.images[index];
-
-      // Change attr value
-      $(element).attr("src", imageUrl);
-    });
-
-    // get HTML after change
-    const modifiedHtmlContent = $.html();
-
-    setHtmlContent(modifiedHtmlContent);
-  }, [post]);
+function BlogId({ post, session }) {
+  const htmlContent = useParseUrlImg(post);
 
   return (
     <>
+      {session.user.isAdmin && (
+        <div className={styles.buttons}>
+          <Link href={`${routes.ADMIN_URL}?update=${post._id}`}>
+            <ActionButton>Cập nhật</ActionButton>
+          </Link>
+          <ActionButton>Xóa</ActionButton>
+        </div>
+      )}
       <h1>{post?.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
     </>
