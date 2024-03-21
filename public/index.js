@@ -78,6 +78,30 @@ export const icons = {
     src: "https://firebasestorage.googleapis.com/v0/b/devercode-72ca6.appspot.com/o/images%2Fdescending.png?alt=media&token=a754ceac-a2c7-4cc7-b242-c588270bc3f2",
     alt: "descending-icon",
   },
+  update: {
+    src: "/assets/images/refresh.png",
+    alt: "update-icon",
+  },
+  delete: {
+    src: "/assets/images/trash.png",
+    alt: "delete-icon",
+  },
+  like: {
+    src: "/assets/images/heart.png",
+    alt: "like-icon",
+  },
+  liked: {
+    src: "/assets/images/liked.png",
+    alt: "liked-icon",
+  },
+  comment: {
+    src: "/assets/images/comment.png",
+    alt: "comment-icon",
+  },
+  commented: {
+    src: "/assets/images/commented.png",
+    alt: "commented-icon",
+  },
 };
 
 export const slidesTop = [

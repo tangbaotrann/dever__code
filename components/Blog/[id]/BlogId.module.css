@@ -1,6 +1,29 @@
 .buttons {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
   gap: 12px;
+  padding-bottom: 14px;
+}
+
+.button__delete {
+  display: flex;
+  align-items: center;
+}
+
+.separation {
+  width: 100%;
+  border-bottom: 1px solid var(--border-bottom);
+}
+
+.content {
+  display: flex;
+  margin-top: 24px;
+}
+
+.content__left {
+  flex: 0.3;
+}
+
+.content__right {
+  flex: 1;
 }
