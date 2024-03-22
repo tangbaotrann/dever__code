@@ -5,6 +5,7 @@ export const constants = {
   LOGIN: "Đăng nhập",
   LOGOUT: "Đăng xuất",
   ADMIN: "Admin",
+  LIKED: "Đã thích",
 };
 
 export const routes = {
@@ -15,6 +16,7 @@ export const routes = {
   LOGIN_URL: "/login",
   VERIFY_URL: "/verify",
   ADMIN_URL: "/admin",
+  LIKED_URL: "/liked",
 };
 
 // Header links
@@ -30,6 +32,10 @@ const menus = [
   {
     title: constants.BLOG,
     url: routes.BLOG_URL,
+  },
+  {
+    title: constants.LIKED,
+    url: routes.LIKED_URL,
   },
 ];
 

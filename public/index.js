@@ -102,6 +102,14 @@ export const icons = {
     src: "/assets/images/commented.png",
     alt: "commented-icon",
   },
+  saved: {
+    src: "/assets/images/save-instagram.png",
+    alt: "saved-icon",
+  },
+  blogging: {
+    src: "/assets/images/blogging.png",
+    alt: "blog-icon",
+  },
 };
 
 export const slidesTop = [

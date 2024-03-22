@@ -1,23 +1,23 @@
 import Image from "next/image";
 
-import styles from "./Blog.module.css";
-import Pagination from "../Pagination/Pagination";
-import Search from "../Search/Search";
-import BlogItem from "./BlogItem/BlogItem";
-import Sort from "../Sort/Sort";
+import styles from "./Liked.module.css";
 import { icons } from "@/public";
+import BlogItem from "../Blog/BlogItem/BlogItem";
+import Sort from "../Sort/Sort";
+import Search from "../Search/Search";
+import Pagination from "../Pagination/Pagination";
 
-function Blog({ posts, count, totalPages }) {
+function Liked({ likes, count, totalPages }) {
   return (
-    <>
+    <div className={styles.container}>
       <div className={styles.title}>
         <Image
-          src={icons.blogging.src}
-          alt={icons.blogging.alt}
+          src={icons.saved.src}
+          alt={icons.saved.alt}
           width={42}
           height={42}
         />
-        <h1>Đã có ({posts?.length} bài viết)</h1>
+        <h1>Đã thích ({likes?.length} bài viết)</h1>
       </div>
 
       <div className={styles.top}>
@@ -30,9 +30,9 @@ function Blog({ posts, count, totalPages }) {
 
       <div className={styles.separation}></div>
 
-      <div className={styles.container}>
-        {posts.length > 0 ? (
-          posts.map((post) => (
+      <div className={styles.content}>
+        {likes?.length > 0 ? (
+          likes.map((post) => (
             <div className={styles.blog__item} key={post._id}>
               <BlogItem post={post} />
             </div>
@@ -43,10 +43,11 @@ function Blog({ posts, count, totalPages }) {
           </i>
         )}
       </div>
+
       {/* Pagination */}
       <Pagination count={count} totalPages={totalPages} />
-    </>
+    </div>
   );
 }
 
-export default Blog;
+export default Liked;
