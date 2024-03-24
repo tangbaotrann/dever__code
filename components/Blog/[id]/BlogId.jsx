@@ -16,7 +16,7 @@ import Input from "@/components/Input/Input";
 import { icons } from "@/public";
 import LikeAndComment from "../LikeAndComment/LikeAndComment";
 
-function BlogId({ post, session }) {
+function BlogId({ post, session, comments }) {
   const htmlContent = useParseUrlImg(post);
 
   const [state, formAction] = useFormState(deleteBlog, undefined);
@@ -75,7 +75,7 @@ function BlogId({ post, session }) {
       <div className={styles.content}>
         {/* Admin and User */}
         <div className={styles.content__left}>
-          <LikeAndComment post={post} session={session} />
+          <LikeAndComment post={post} session={session} comments={comments} />
         </div>
 
         <div className={styles.content__right}>

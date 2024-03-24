@@ -3,7 +3,7 @@
 :root {
   /* define colors */
   --primary-text: #ffffff;
-  --text: rgba(13, 19, 51, 1);
+  --text: #0d1333;
   --text-gray-900: #a1a1a1;
   --border-bottom: #eee;
   --header-nav: #000000;

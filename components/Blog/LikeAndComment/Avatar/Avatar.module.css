@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.avatar__image {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.username {
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.time {
+  font-size: 0.5rem;
+  font-weight: 400;
+  color: var(--text-gray-900);
+}

@@ -110,6 +110,10 @@ export const icons = {
     src: "/assets/images/blogging.png",
     alt: "blog-icon",
   },
+  rightArrow: {
+    src: "/assets/images/right-arrow.png",
+    alt: "right-arrow-icon",
+  },
 };
 
 export const slidesTop = [

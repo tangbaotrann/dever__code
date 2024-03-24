@@ -9,6 +9,7 @@ import menus, { constants, routes } from "@/routes";
 import MenuItem from "./MenuItem/MenuItem";
 import images, { icons } from "@/public";
 import Logout from "@/components/Logout/Logout";
+import customUsername from "@/utils/customUsername";
 
 function Menu({ session }) {
   const pathName = usePathname();
@@ -52,7 +53,7 @@ function Menu({ session }) {
                   />
                 </div>
                 <span className={styles.username}>
-                  {session?.user?.username || session?.user?.name}
+                  {customUsername(session?.user.email)}
                 </span>
               </div>
             </>
@@ -118,7 +119,7 @@ function Menu({ session }) {
                   />
                 </div>
                 <span className={styles.username}>
-                  {session?.user?.username || session?.user?.name}
+                  {customUsername(session?.user.email)}
                 </span>
               </div>
             </>

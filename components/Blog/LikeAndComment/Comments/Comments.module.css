@@ -1,0 +1,104 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border: 1px solid var(--header-border-bottom);
+  position: fixed;
+  background: var(--primary-bg);
+  color: var(--text);
+  width: calc(100vw - 50%);
+  height: calc(100vh - 80px);
+  top: 80px;
+  right: 0;
+  bottom: 0;
+  padding: 12px;
+  box-shadow: 0 0 1px 1px var(--header-border-bottom);
+
+  transform: translate(0%, 0);
+  animation-delay: 0s;
+  animation-play-state: running;
+  animation-iteration-count: 1;
+  animation-duration: 1s;
+  animation-name: supportanimation;
+
+  opacity: 1; /* fade-in effect */
+}
+
+@keyframes supportanimation {
+  from {
+    transform: translate(200%, 0);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0%, 0);
+    opacity: 1;
+  }
+}
+
+.close__comment_icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.close__comment_icon:hover {
+  opacity: 0.8;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.like__comment_item_right {
+  flex: 1;
+}
+
+.comment__item_right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon__comment:hover {
+  cursor: pointer;
+  opacity: 0.6;
+  transition: all 0.6s;
+}
+
+.like__comment_text {
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.like__comment_text_hidden {
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: none;
+}
+
+.text__message {
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 24px 0;
+}
+
+.comment__item {
+  padding: 10px;
+  overflow-y: scroll;
+  max-height: calc(100vh - 330px);
+}
